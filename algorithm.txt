@@ -1,0 +1,10 @@
+page container -done
+grid container -done
+user input to determine grid size (make default grid size)
+function to render grid per user input or default
+default bg color of div: canvas background image
+button with onclick to run function to assign class for that color scheme
+erase button to run function to revert to class with :hover {transparent}
+event listener for all divs to toggle penUp (default) class that has no :hover
+hover css for grid areas per class
+clear grid button to reset all to transparent background
