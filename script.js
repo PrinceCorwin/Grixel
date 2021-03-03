@@ -1,6 +1,15 @@
 // declare global variables
 let gridContainer = document.getElementById("grid-container");
-let gridSize = 25;
+let gridSize = 50;
+let colorScheme = "pastel";
+let penUp = true;
+console.log(penUp);
+document
+  .getElementById("grid-container")
+  .addEventListener("click", function () {
+    togglePen();
+  });
+console.log(penUp);
 
 addDivs(gridSize);
 
@@ -17,15 +26,12 @@ slider.oninput = function () {
 
 // add divs and set class
 function addDivs(gridSize) {
-  //   let gridWidth = 1 / gridSize + "%";
-  //   let gridHeight = 1 / gridSize + "%";
   gridContainer.innerHTML = "";
 
   setGridSize(gridSize);
-  console.log("gridsize = " + gridSize);
+  //   console.log("gridsize = " + gridSize);
   for (let i = 1; i <= gridSize * gridSize; i++) {
     let node = document.createElement("DIV");
-    // node.style.backgroundColor = "white";
     node.id = i;
     node.classList.add("gridItem");
     node.onmouseover = function () {
@@ -38,21 +44,71 @@ function addDivs(gridSize) {
 // set grid size
 function setGridSize(gridSize) {
   let gridRatio = (1 / gridSize) * 100 + "%";
-  //   let gridColumn = "grid-template-column:";
-  //   let gridRowHeight = "grid-auto-rows: " + gridRatio;
   let gridArray = [];
   for (let i = 0; i < gridSize; i++) {
-    // gridColumn = gridColumn + " " + gridRatio;
     gridArray.push(gridRatio);
   }
-  console.log(gridArray);
+  //   console.log(gridArray);
   let gridStyleStr = gridArray.join(" ");
-  console.log(gridStyleStr);
+  //   console.log(gridStyleStr);
   gridContainer.style.gridTemplateColumns = gridStyleStr;
   gridContainer.style.gridAutoRows = gridRatio;
-  console.log(gridContainer);
+  //   console.log(gridContainer);
   return;
 }
+// set background color
 function color(node) {
-  node.style.backgroundColor = "red";
+  console.log(penUp);
+  if (penUp === false) {
+    if (colorScheme === "pastel") {
+      let rnd = Math.floor(Math.random() * 5);
+      switch (rnd) {
+        case 0:
+          rnd = "red";
+          break;
+        case 1:
+          rnd = "blue";
+          break;
+        case 2:
+          rnd = "black";
+          break;
+        case 3:
+          rnd = "green";
+          break;
+        case 4:
+          rnd = "yellow";
+          break;
+        default:
+          rnd = "blue";
+          break;
+      }
+      // console.log(rnd);
+      node.style.backgroundColor = rnd;
+    } else if (colorScheme === "white") {
+      node.style.backgroundColor = "white";
+    } else {
+      node.style.backgroundColor = document.getElementById("favcolor").value;
+    }
+  }
+}
+function setScheme(scheme) {
+  switch (scheme) {
+    case "pastel":
+      colorScheme = "pastel";
+      break;
+    case "erase":
+      colorScheme = "white";
+      break;
+    //   custom incomplete
+    case "custom":
+      colorScheme = "custom";
+      console.log(colorScheme);
+      break;
+
+    default:
+      break;
+  }
+}
+function togglePen() {
+  penUp = !penUp;
 }

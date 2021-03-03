@@ -6,6 +6,7 @@
   --clr-darktone: ;
   --clr-contrast1: ;
   --clr-contrast2: ;
+  --ff-title: "Megrim", cursive;
   --ff-primary: ;
   --ff-accent: ;
 }
@@ -41,7 +42,16 @@ body {
   /* height: 600px; */
   margin: auto;
 }
-
+.grid-container-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 3rem;
+  font-family: var(--ff-title);
+}
 .grid-container {
   background-color: black;
   border: 10px solid black;
@@ -55,7 +65,10 @@ body {
 .slidecontainer {
   width: 200px;
 }
-
+.slidecontainer > p {
+  text-align: center;
+  margin: 5px;
+}
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -91,6 +104,17 @@ body {
   cursor: pointer;
 }
 /* slider end */
+.btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+button {
+  padding: 5px 15px;
+  margin: 10px;
+}
 .gridItem {
   background-color: white;
 }
