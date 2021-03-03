@@ -1,5 +1,6 @@
 /* roots and customs */
 :root {
+  --clr-light: white;
   --clr-primary: ;
   --clr-midtone: ;
   --clr-darktone: ;
@@ -16,6 +17,82 @@
   margin: 0;
   padding: 0;
 }
+body {
+  background-image: url("./images/art-supplies-bg.png");
+  background-size: cover;
+  height: 100vh;
+  padding-top: 20px;
+}
+.page-container {
+  color: var(--clr-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  width: 1000px;
+  padding: 60px 0;
+  border-radius: 5px;
+  background: linear-gradient(
+    to right top,
+    rgba(255, 255, 255, 0.2),
+    rgba(4, 106, 131, 0.3)
+  );
+  backdrop-filter: blur(5px);
+  /* height: 600px; */
+  margin: auto;
+}
+
 .grid-container {
+  background-color: black;
+  border: 10px solid black;
   display: grid;
+  width: 500px;
+  height: 500px;
+  /* margin: auto; */
+}
+
+/* slider start */
+.slidecontainer {
+  width: 200px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 30px;
+  background: #d3d3d3;
+  border: 4px solid blue;
+  border-radius: 19px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: blue;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 30p;
+  height: 30px;
+  border-radius: 50%;
+  background: blue;
+  cursor: pointer;
+}
+/* slider end */
+.gridItem {
+  background-color: white;
+}
+@media screen and (max-width: 800px) {
 }
