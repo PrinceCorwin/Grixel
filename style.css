@@ -1,13 +1,7 @@
 /* roots and customs */
 :root {
   --clr-light: white;
-  --clr-primary: ;
-  --clr-midtone: ;
-  --clr-darktone: ;
-  --clr-contrast1: ;
-  --clr-contrast2: ;
   --ff-title: "Megrim", cursive;
-  --ff-primary: ;
   --ff-accent: "Kavivanar", cursive;
 }
 
@@ -39,7 +33,6 @@ body {
     rgba(4, 106, 131, 0.3)
   );
   backdrop-filter: blur(5px);
-  /* height: 600px; */
   margin: auto;
 }
 .grid-container-column {
@@ -53,10 +46,27 @@ body {
   font-family: var(--ff-title);
   margin-bottom: 10px;
 }
+#g {
+  color: #efa4f1;
+}
+#r {
+  color: #ffefa1;
+}
+#i {
+  color: #94ebcd;
+}
+#x {
+  color: #78c4d4;
+}
+#e {
+  color: #faaf4e;
+}
+#l {
+  color: #efa4f1;
+}
 .grid-container {
   cursor: pointer;
   background-color: black;
-  /* border: 10px solid black; */
   display: grid;
   width: 500px;
   height: 500px;
@@ -92,7 +102,7 @@ body {
 }
 
 .slider:hover {
-  /* opacity: 1; */
+  opacity: 1;
 }
 
 .slider::-webkit-slider-thumb {
@@ -117,36 +127,24 @@ body {
 /* slider end */
 .btns {
   height: 500px;
-  background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   margin-right: 40px;
   padding: 0 20px;
+}
+.btns > div {
+  text-align: center;
+  width: 200px;
+  padding: 10px;
   background: linear-gradient(
     to right top,
     rgba(255, 255, 255, 0.2),
     rgba(235, 13, 255, 0.3)
   );
-
   backdrop-filter: blur(5px);
   box-shadow: 5px 5px 7px 3px rgba(13, 23, 26, 0.3);
-}
-.btns > div {
-  text-align: center;
-  /* background-color: black; */
-  width: 200px;
-  padding: 10px;
-  /* border-radius: 30px; */
-  background: linear-gradient(
-    to right top,
-    rgba(255, 255, 255, 0.2),
-    rgba(27, 182, 221, 0.3)
-  );
-
-  backdrop-filter: blur(5px);
-  /* box-shadow: 0 0 7px 3px rgba(4, 106, 131, 0.3); */
 }
 .colorInput {
   display: flex;
@@ -162,8 +160,6 @@ button {
   background: linear-gradient(to right top, #dce9a1, #16bfc5);
   border: none;
   box-shadow: 0 0 2px 2px rgba(58, 58, 58, 0.6);
-
-  /* margin: 10px; */
 }
 label,
 .instruction {
@@ -171,7 +167,6 @@ label,
   text-shadow: 1px 1px black;
   font-family: var(--ff-accent);
   margin-bottom: 5px;
-  /* margin-top: 10px; */
 }
 input {
   cursor: pointer;
@@ -179,12 +174,7 @@ input {
   padding: none;
   border: none;
   height: 2rem;
-  /* box-shadow: 0 0 2px 2px rgba(58, 58, 58, 0.6); */
-  /* outline: none; */
-  /* margin-bottom: 10px; */
 }
 .gridItem {
   background-color: white;
-}
-@media screen and (max-width: 800px) {
 }
