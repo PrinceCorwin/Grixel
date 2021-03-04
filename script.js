@@ -13,13 +13,13 @@ console.log(penUp);
 
 addDivs(gridSize);
 
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
+var slider = document.getElementById("sliderRange");
+var output = document.getElementById("gridSize");
+output.innerHTML = slider.value + " x " + slider.value;
 
 // slider output
 slider.oninput = function () {
-  output.innerHTML = this.value;
+  output.innerHTML = this.value + " x " + this.value;
   gridSize = this.value;
   addDivs(gridSize);
 };
@@ -64,19 +64,19 @@ function color(node) {
       let rnd = Math.floor(Math.random() * 5);
       switch (rnd) {
         case 0:
-          rnd = "red";
+          rnd = "#EFA4F1";
           break;
         case 1:
-          rnd = "blue";
+          rnd = "#ffefa1";
           break;
         case 2:
-          rnd = "black";
+          rnd = "#94ebcd";
           break;
         case 3:
-          rnd = "green";
+          rnd = "#78c4d4";
           break;
         case 4:
-          rnd = "yellow";
+          rnd = "#9a8194";
           break;
         default:
           rnd = "blue";

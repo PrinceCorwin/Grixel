@@ -15,20 +15,27 @@
       href="https://fonts.googleapis.com/css2?family=Megrim&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kavivanar&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- add nav bar here -->
     <div class="page-container">
       <div class="btns">
-        <button onclick="setScheme('pastel')">Pastel</button>
-        <label for="favcolor">Select your favorite color:</label>
-        <input
-          type="color"
-          id="favcolor"
-          name="favcolor"
-          onclick="setScheme('custom')"
-        />
-        <button onclick="setScheme('erase')">Erase</button>
+        <div><button onclick="setScheme('pastel')">Pastel</button></div>
+        <div><button onclick="setScheme('erase')">Erase</button></div>
+        <div class="colorInput">
+          <label for="favcolor">CUSTOM COLOR:</label>
+          <input
+            type="color"
+            id="favcolor"
+            name="favcolor"
+            value="#20C8F1"
+            onclick="setScheme('custom')"
+          />
+        </div>
 
         <div class="slidecontainer">
           <p>GRID SIZE:</p>
@@ -38,13 +45,17 @@
             max="100"
             value="50"
             class="slider"
-            id="myRange"
+            id="sliderRange"
           />
-          <p>Value: <span id="demo"></span></p>
+          <p>Grid Size: <span id="gridSize"></span></p>
+        </div>
+        <div>
+          <button class="clear" onclick="addDivs(gridSize)">Clear</button>
         </div>
       </div>
       <div class="grid-container-column">
         <h1 class="title">grixel</h1>
+        <p class="instruction">Click in grid to start/stop drawing</p>
         <div class="grid-container" id="grid-container"></div>
       </div>
     </div>
