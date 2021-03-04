@@ -189,8 +189,7 @@ button:active:after {
 button:hover {
   background-image: linear-gradient(to left top, #dce9a1, #16bfc5);
 }
-.btn:hover {
-}
+
 label,
 .instruction {
   color: white;
