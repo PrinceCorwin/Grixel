@@ -135,6 +135,7 @@ body {
   padding: 0 20px;
 }
 .btns > div {
+  position: relative;
   text-align: center;
   width: 200px;
   padding: 10px;
@@ -153,13 +154,42 @@ body {
   align-items: center;
 }
 button {
+  outline: none;
+  overflow: hidden;
+  text-decoration: none;
+  position: relative;
   color: black;
   cursor: pointer;
   border-radius: 15px;
   padding: 5px 15px;
-  background: linear-gradient(to right top, #dce9a1, #16bfc5);
+  background-image: linear-gradient(to right top, #dce9a1, #16bfc5);
   border: none;
   box-shadow: 0 0 2px 2px rgba(58, 58, 58, 0.6);
+  transition: all 0.5s ease-in-out;
+}
+button:after {
+  content: "";
+  background: #90ee90;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+button:hover {
+  background-image: linear-gradient(to left top, #dce9a1, #16bfc5);
+}
+.btn:hover {
 }
 label,
 .instruction {
