@@ -1,4 +1,6 @@
 // declare global variables
+let defaultSliderValue = document.getElementById("sliderRange");
+defaultSliderValue.value = 50;
 let gridContainer = document.getElementById("grid-container");
 let gridSize = 50;
 let colorScheme = "pastel";
@@ -44,14 +46,15 @@ function addDivs(gridSize) {
 // set grid size
 function setGridSize(gridSize) {
   let gridRatio = (1 / gridSize) * 100 + "%";
-  let gridArray = [];
-  for (let i = 0; i < gridSize; i++) {
-    gridArray.push(gridRatio);
-  }
+  // let gridArray = [];
+  // for (let i = 0; i < gridSize; i++) {
+  //   gridArray.push(gridRatio);
+  // }
   //   console.log(gridArray);
-  let gridStyleStr = gridArray.join(" ");
+  // let gridStyleStr = gridArray.join(" ");
   //   console.log(gridStyleStr);
-  gridContainer.style.gridTemplateColumns = gridStyleStr;
+  gridContainer.style.gridTemplateColumns =
+    "repeat(" + gridSize + ", " + gridRatio + " )"; //gridStyleStr;
   gridContainer.style.gridAutoRows = gridRatio;
   //   console.log(gridContainer);
   return;
