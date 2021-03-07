@@ -5,12 +5,15 @@ let gridContainer = document.getElementById("grid-container");
 let gridSize = 50;
 let colorScheme = "pastel";
 let penUp = true;
-console.log(penUp);
-document
-  .getElementById("grid-container")
-  .addEventListener("click", function () {
-    togglePen();
-  });
+// console.log(penUp);
+let gridArea = document.getElementById("grid-container");
+gridArea.addEventListener("click", function () {
+  togglePen();
+});
+// set up touch event listeners for mobile
+gridArea.addEventListener("touchstart", function () {
+  penUp = false;
+});
 console.log(penUp);
 
 addDivs(gridSize);
@@ -37,6 +40,9 @@ function addDivs(gridSize) {
     node.id = i;
     node.classList.add("gridItem");
     node.onmouseover = function () {
+      color(node);
+    };
+    node.ontouchmove = function () {
       color(node);
     };
     gridContainer.appendChild(node);
