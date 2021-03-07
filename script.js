@@ -42,7 +42,7 @@ function addDivs(gridSize) {
     node.onmouseover = function () {
       color(node);
     };
-    node.ontouchmove = function () {
+    node.ontouchstart = function () {
       color(node);
     };
     gridContainer.appendChild(node);
