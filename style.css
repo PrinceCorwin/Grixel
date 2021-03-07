@@ -240,6 +240,9 @@ input {
   }
 }
 @media screen and (max-width: 600px) {
+  body {
+    height: 100vh;
+  }
   .page-container {
     position: relative;
     flex-direction: column-reverse;
@@ -254,8 +257,6 @@ input {
       rgba(255, 255, 255, 0.2),
       rgba(4, 106, 131, 0.3)
     );
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     margin: auto;
   }
   .btns {
@@ -268,13 +269,6 @@ input {
     flex-wrap: wrap;
     margin-right: 0;
     padding: 10px 0;
-    /* background: linear-gradient(
-      to right top,
-      rgba(255, 255, 255, 0.2),
-      rgba(235, 13, 255, 0.3)
-    ); */
-    /* backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px); */
   }
 
   #pastel {
@@ -306,7 +300,6 @@ input {
     box-shadow: none;
   }
   .grid-container {
-    display: grid;
     width: 400px;
     height: 400px;
     margin-top: 10px;
