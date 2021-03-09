@@ -11,9 +11,9 @@ gridArea.addEventListener("click", function () {
   togglePen();
 });
 // set up touch event listeners for mobile
-gridArea.addEventListener("touchstart", function () {
-  penUp = false;
-});
+// gridArea.addEventListener("touchstart", function () {
+//   penUp = false;
+// });
 console.log(penUp);
 
 addDivs(gridSize);
@@ -42,7 +42,9 @@ function addDivs(gridSize) {
     node.onmouseover = function () {
       color(node);
     };
+    // this is not working correctly. Only the first div touched on touchscreen lights up. After that, nothing
     node.ontouchstart = function () {
+      penup = false;
       color(node);
     };
     gridContainer.appendChild(node);
@@ -52,15 +54,8 @@ function addDivs(gridSize) {
 // set grid size
 function setGridSize(gridSize) {
   let gridRatio = (1 / gridSize) * 100 + "%";
-  // let gridArray = [];
-  // for (let i = 0; i < gridSize; i++) {
-  //   gridArray.push(gridRatio);
-  // }
-  //   console.log(gridArray);
-  // let gridStyleStr = gridArray.join(" ");
-  //   console.log(gridStyleStr);
   gridContainer.style.gridTemplateColumns =
-    "repeat(" + gridSize + ", " + gridRatio + " )"; //gridStyleStr;
+    "repeat(" + gridSize + ", " + gridRatio + " )";
   gridContainer.style.gridAutoRows = gridRatio;
   //   console.log(gridContainer);
   return;
