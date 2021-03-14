@@ -1,0 +1,20 @@
+ //mobile support
+
+  container.addEventListener("touchmove", function(e) {
+    let touch = e.touches[0];
+    let focus = document.elementFromPoint(touch.clientX, touch.clientY);
+      if (rgb === true) {
+        rbgMode();
+          focus.style.backgroundColor = `${rgbColors}`;
+          cell.style.transition = "0.15s ease-in";
+      } else {
+          focus.style.backgroundColor = color.value;
+          cell.style.transition = "0.15s ease-in";
+        }
+    });
+
+  container.addEventListener("touchstart", function(e) {
+    if (e.touches.length == 1) {
+        e.preventDefault();
+    }
+  });
