@@ -19,6 +19,7 @@ body {
   padding-top: 40px;
 }
 .page-container {
+  /* min-height: 100vh; */
   color: var(--clr-light);
   display: flex;
   justify-content: center;
@@ -33,7 +34,7 @@ body {
   );
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  margin: auto;
+  margin: auto auto 2rem auto;
 }
 @supports (-moz-appearance: none) {
   .page-container {
@@ -227,6 +228,55 @@ input {
 .gridItem {
   background-color: white;
 }
+/* footer start */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #dcdcdc;
+  background-color: black;
+}
+footer > div {
+  padding: 1rem;
+}
+.footer-contact {
+  font-family: var(--ff-accent);
+  color: #dcdcdc;
+}
+.footer-contact-links {
+  display: flex;
+  flex-direction: column;
+}
+footer a,
+footer .fab,
+footer .fas,
+footer img {
+  /* text-decoration: none; */
+  color: lightblue;
+  transition: all 0.2s ease-in-out;
+}
+footer a:hover,
+footer .fab:hover,
+footer .fas:hover,
+footer img:hover {
+  transform: scale(1.1);
+  color: yellow;
+}
+.footer-logo {
+  width: 200px;
+}
+.footer-social {
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.copyright {
+  padding: 0.5rem 0;
+}
+/* footer end */
+@media screen and (max-width: 600px) {
+}
+
 @media screen and (max-width: 800px) {
   .page-container {
     width: 100vw;
@@ -242,6 +292,13 @@ input {
 @media screen and (max-width: 600px) {
   body {
     height: 100vh;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-contact {
+    text-align: center;
   }
   .page-container {
     position: relative;
